@@ -7,4 +7,8 @@
     <RootNamespace>api_relatorio</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Adapters\" />
+  </ItemGroup>
+
 </Project>
