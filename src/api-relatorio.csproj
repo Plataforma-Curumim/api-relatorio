@@ -8,7 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Adapters\" />
+    <Folder Include="Adapters\Inbound\HTTP\DTO\" />
+    <Folder Include="Adapters\Inbound\HTTP\DTO\Responses\" />
+    <Folder Include="Adapters\Inbound\HTTP\DTO\Requests\" />
+    <Folder Include="Adapters\Inbound\HTTP\Endpoints\" />
+    <Folder Include="Adapters\Inbound\HTTP\Mappers\" />
+    <Folder Include="Adapters\Outbound\DB\Postgres\Connection\" />
+    <Folder Include="Adapters\Outbound\DB\Postgres\Repository\" />
   </ItemGroup>
 
 </Project>

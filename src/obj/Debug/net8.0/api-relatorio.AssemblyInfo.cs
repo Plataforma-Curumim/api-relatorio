@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("api-relatorio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3a21cbce9da339038d839b776c78c9e1c1d4f3a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8d3548dbb53d2ae75320a532d33e40850d3b6093")]
 [assembly: System.Reflection.AssemblyProductAttribute("api-relatorio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("api-relatorio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
