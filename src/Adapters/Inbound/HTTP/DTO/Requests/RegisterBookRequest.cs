@@ -14,7 +14,8 @@ namespace api_relatorio.Adapters.Inbound.HTTP.DTO.Requests
         //selecionar por data//
         //selecionar por genero
         //selecionar por autor
-        
+        //
+
 
     }
 }
