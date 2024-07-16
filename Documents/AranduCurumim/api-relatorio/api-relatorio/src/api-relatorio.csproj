@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>api_relatorio</RootNamespace>
+	<Version>1.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+
+	  <PackageReference Include="Flurl" Version="4.0.0" />
+	  <PackageReference Include="Flurl.Http" Version="4.0.2" />
+	  <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.7" />
+	  <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="9.0.2.52" />
+	  <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.1" />
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+	  <PackageReference Include="Npgsql" Version="8.0.3" />
+	  
+  </ItemGroup>
+
+</Project>
