@@ -5,16 +5,16 @@ namespace api_relatorio.Application.Domain.Mappers
 {
     public static class MapUserRepository
     {
-        public static RegisterUserSql ToRepository(CommandRegisterUser command)
+        public static RegisterUserSql ToRepository(CommandReportGeneratorUser command)
         {
             return new RegisterUserSql
             {
                 User = command.User!
             };
         }
-        public static CommandRegisterUser ToCommand(RegisterUserSql model)
+        public static CommandReportGeneratorUser ToCommand(RegisterUserSql model)
         {
-            return new CommandRegisterUser
+            return new CommandReportGeneratorUser
             {
                 User = model.User,
                 UserId = model.UserId,

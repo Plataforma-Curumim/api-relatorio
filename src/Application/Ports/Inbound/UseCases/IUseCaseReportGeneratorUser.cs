@@ -2,7 +2,7 @@
     
 namespace api_relatorio.Application.Ports.Inbound.UseCases
 {
-    public interface IUseCaseRegisterUser
+    public interface IUseCaseReportGeneratorUser
     {
         public Task<BaseReturn<CommandRegisterUser>> Execute(CommandRegisterUser command);
     }

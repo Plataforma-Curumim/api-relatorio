@@ -7,8 +7,8 @@ namespace api_relatorio.Infra.DependencyInjection
     {
         public static void AddUseCaseExtensions(this IServiceCollection services)
         {
-            services.AddScoped<IUseCaseRegisterUser, UseCaseRegisterUser>();
-            services.AddScoped<IUseCaseRegisterBook, UseCaseRegisterBook>();
+            services.AddScoped<IUseCaseReportGeneratorUser, UseCaseReportGeneratorUser>();
+            services.AddScoped<IUseCaseReportGeneratorBook, UseCaseReportGeneratorBook>();
         }
     }
 }

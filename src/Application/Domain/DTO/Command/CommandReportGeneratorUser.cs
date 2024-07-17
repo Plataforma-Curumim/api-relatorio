@@ -3,7 +3,7 @@ using api_relatorio.Application.Domain.Entities;
 
 namespace api_relatorio.Application.Domain.Dto.Command
 {
-    public record CommandRegisterUser
+    public record CommandReportGeneratorUser
     {
         public User? User { get; set; }
         public string? UserId { get; set; }

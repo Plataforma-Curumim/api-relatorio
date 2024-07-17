@@ -8,13 +8,13 @@ using api_relatorio.Application.Ports.Outbound.DB.Repository;
 
 namespace api_relatorio.Application.Core.UseCases
 {
-    public class UseCaseRegisterUser : IUseCaseRegisterUser
+    public class UseCaseReportGeneratorUser : IUseCaseReportGeneratorUser
     {
-        private readonly IRegisterUserRepository ?_repository;
+        private readonly IReportGeneratorUserRepository ?_repository;
 
-        public UseCaseRegisterUser(IServiceProvider provider)
+        public UseCaseReportGeneratorUser(IServiceProvider provider)
         {
-            _repository = provider.GetService<IRegisterUserRepository>();
+            _repository = provider.GetService<IReportGeneratorUserRepository>();
         }
         public async Task<BaseReturn<CommandRegisterUser>> Execute(CommandRegisterUser command)
         {

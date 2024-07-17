@@ -5,7 +5,7 @@ namespace api_relatorio.Application.Domain.Mappers
 {
     public static class MapBookRepository
     {
-        public static RegisterBookSql ToRepository(CommandRegisterBook command)
+        public static RegisterBookSql ToRepository(CommandReportGeneratorBook command)
         {
             return new RegisterBookSql
             {
@@ -15,9 +15,9 @@ namespace api_relatorio.Application.Domain.Mappers
                 //inserir
             };
         }
-        public static CommandRegisterBook ToCommand(RegisterBookSql model)
+        public static CommandReportGeneratorBook ToCommand(RegisterBookSql model)
         {
-            return new CommandRegisterBook
+            return new CommandReportGeneratorBook
             {
                 //Book = model.Book,
                 //UserId = model.UserId,

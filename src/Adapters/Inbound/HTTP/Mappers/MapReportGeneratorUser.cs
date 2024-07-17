@@ -5,19 +5,19 @@ using api_relatorio.Application.Domain.DTO.Command;
 
 namespace api_relatorio.Adapters.Inbound.HTTP.Mappers
 {
-    public static class MapRegisterUser
+    public static class MapReportGeneratorUser
     {
-        public static CommandRegisterUser ToCommand(RegisterUserResponse request)
+        public static CommandReportGeneratorUser ToCommand(ReportGeneratorUserResponse request)
         {
-            return new CommandRegisterUser
+            return new CommandReportGeneratorUser
             {
                 //User = request.User,
                 //Config = request.Config
             };
         }
-        public static RegisterUserResponse ToResponse(CommandRegisterUser response)
+        public static ReportGeneratorUserResponse ToResponse(CommandReportGeneratorUser response)
         {
-            return new RegisterUserResponse
+            return new ReportGeneratorUserResponse
             {
                 DateRegister = response.DateRegister,
                 UserId = response.UserId,

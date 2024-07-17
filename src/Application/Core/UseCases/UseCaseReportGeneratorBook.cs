@@ -7,12 +7,12 @@ using api_relatorio.Application.Ports.Outbound.DB.Repository;
 
 namespace api_relatorio.Application.Core.UseCases
 {
-    public class UseCaseRegisterBook : IUseCaseRegisterBook
+    public class UseCaseReportGeneratorBook : IUseCaseReportGeneratorBook
     {
-        private readonly IRegisterBookRepository? _repository;
-        public UseCaseRegisterBook(IServiceProvider provider)
+        private readonly IReportGeneratorBookRepository? _repository;
+        public UseCaseReportGeneratorBook(IServiceProvider provider)
         {
-            _repository = provider.GetService<IRegisterBookRepository>();
+            _repository = provider.GetService<IReportGeneratorBookRepository>();
         }
 
         public async Task<BaseReturn<CommandRegisterBook>> Execute(CommandRegisterBook command)

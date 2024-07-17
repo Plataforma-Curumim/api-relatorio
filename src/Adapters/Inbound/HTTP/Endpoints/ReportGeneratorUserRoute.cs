@@ -7,20 +7,21 @@ using api_relatorio.Application.Domain.Enums;
 
 namespace api_relatorio.Adapters.Inbound.HTTP.Routes
 {
-    public static class RegisterUserRoute
+    // RegisterUserRoute =  ReportGeneratorUserRoute
+    public static class ReportGeneratorUserRoute
     {
-        public static void AddRegisterUser(this WebApplication app)
+        public static void AddReportGeneratorrUser(this WebApplication app)
         {
             app.MapPost("/registerUser", RegisterUser)
-                .Accepts<RegisterUserRequest>("application/json")
-                .Produces<RegisterUserResponse>(201)
+                .Accepts<ReportGeneratorUserRequest>("application/json")
+                .Produces<ReportGeneratorUserResponse>(201)
                 .Produces<BaseError>(400)
                 .Produces<BaseError>(422)
                 .Produces<BaseError>(500);
 
 
         }
-        private static async Task<IResult> RegisterUser(IUseCaseRegisterUser useCase, HttpContext context, RegisterUserRequest request)
+        private static async Task<IResult> RegisterUser(IUseCaseReportGeneratorUser useCase, HttpContext context, ReportGeneratorUserRequest request)
         {
             try
             {

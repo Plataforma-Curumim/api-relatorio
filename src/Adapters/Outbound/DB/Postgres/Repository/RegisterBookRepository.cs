@@ -7,7 +7,7 @@ using System.Data;
 
 namespace api_relatorio.Adapters.Outbound.DB.Postgres.Repository
 {
-    public class RegisterBookRepository : IRegisterBookRepository
+    public class RegisterBookRepository : IReportGeneratorBookRepository
     {
         private readonly IDBConnection _dbConnection;
         private readonly NpgsqlConnection _connection;

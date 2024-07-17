@@ -2,8 +2,8 @@
 
 namespace api_relatorio.Application.Ports.Outbound.DB.Repository
 {
-    public interface IRegisterUserRepository
+    public interface IReportGeneratorBookRepository
     {
-        public Task<RegisterUserSql> RegisterUser(RegisterUserSql command);
+        public Task<RegisterBookSql> RegisterBook(RegisterBookSql msgIn);
     }
 }

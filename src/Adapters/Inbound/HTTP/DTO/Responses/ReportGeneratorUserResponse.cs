@@ -2,7 +2,8 @@
 
 namespace api_relatorio.Adapters.Inbound.HTTP.DTO.Responses
 {
-    public record RegisterUserResponse
+    // RegisterUserResponse = ReportGeneratorUserResponse
+    public record ReportGeneratorUserResponse
     {
         public string? UserId { get; set; }
         public DateTime DateRegister { get; set; }
