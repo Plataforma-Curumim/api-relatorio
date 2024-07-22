@@ -10,9 +10,9 @@ namespace api_relatorio.Adapters.Inbound.HTTP.Routes
     // RegisterUserRoute =  ReportGeneratorUserRoute
     public static class ReportGeneratorUserRoute
     {
-        public static void AddReportGeneratorrUser(this WebApplication app)
+        public static void AddReportGeneratorUser(this WebApplication app)
         {
-            app.MapPost("/registerUser", RegisterUser)
+            app.MapPost("/ReportGeneratorUser", ReportGeneratorUser)
                 .Accepts<ReportGeneratorUserRequest>("application/json")
                 .Produces<ReportGeneratorUserResponse>(201)
                 .Produces<BaseError>(400)
@@ -21,16 +21,16 @@ namespace api_relatorio.Adapters.Inbound.HTTP.Routes
 
 
         }
-        private static async Task<IResult> RegisterUser(IUseCaseReportGeneratorUser useCase, HttpContext context, ReportGeneratorUserRequest request)
+        private static async Task<IResult> ReportGeneratorUser(IUseCaseReportGeneratorUser useCase, HttpContext context, ReportGeneratorUserRequest request)
         {
             try
             {
 
-                var response = await useCase.Execute(MapRegisterUser.ToCommand(request));
+                var response = await useCase.Execute(MapReportGeneratorUser.ToCommand(request));
 
                 if (response.State != EnumState.SUCCESS) return MapErrorEndpoint.ToEndpointError(response.ErrorObject);
 
-                var responseMap = MapRegisterUser.ToResponse(response.SucessObject!);
+                var responseMap = MapReportGeneratorUser.ToResponse(response.SucessObject!);
                 return Results.Ok();
             }
             catch (Exception ex)

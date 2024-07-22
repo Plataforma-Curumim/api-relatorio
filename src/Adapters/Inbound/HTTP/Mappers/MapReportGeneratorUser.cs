@@ -1,17 +1,19 @@
-﻿using api_relatorio.Adapters.Inbound.HTTP.DTO.Requests;
+﻿
+
+using api_relatorio.Adapters.Inbound.HTTP.DTO.Requests;
 using api_relatorio.Adapters.Inbound.HTTP.DTO.Responses;
 using api_relatorio.Application.Domain.Dto.Command;
-using api_relatorio.Application.Domain.DTO.Command;
 
 namespace api_relatorio.Adapters.Inbound.HTTP.Mappers
 {
     public static class MapReportGeneratorUser
     {
-        public static CommandReportGeneratorUser ToCommand(ReportGeneratorUserResponse request)
+        public static CommandReportGeneratorUser ToCommand(ReportGeneratorUserRequest request)
         {
             return new CommandReportGeneratorUser
             {
-                //User = request.User,
+                User = request.User,
+              
                 //Config = request.Config
             };
         }
@@ -19,8 +21,10 @@ namespace api_relatorio.Adapters.Inbound.HTTP.Mappers
         {
             return new ReportGeneratorUserResponse
             {
-                DateRegister = response.DateRegister,
-                UserId = response.UserId,
+               User = response.User
+              // DateRegister = response.DateRegister,
+              //  UserId = response.UserId,
+              //  UserId = response.UserId,
             };
         }
     }

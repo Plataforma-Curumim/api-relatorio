@@ -5,24 +5,24 @@ namespace api_relatorio.Application.Domain.Mappers
 {
     public static class MapBookRepository
     {
-        public static RegisterBookSql ToRepository(CommandReportGeneratorBook command)
+        public static ReportGeneratorBookSql ToRepository(CommandReportGeneratorBook command)
         {
-            return new RegisterBookSql
+            return new ReportGeneratorBookSql
             {
-                UserId = command.UserId,
+              //  UserId = command.UserId,
                 Book = command.Book!
 
                 //inserir
             };
         }
-        public static CommandReportGeneratorBook ToCommand(RegisterBookSql model)
+        public static CommandReportGeneratorBook ToCommand(ReportGeneratorBookSql model)
         {
             return new CommandReportGeneratorBook
             {
-                //Book = model.Book,
+                Book = model.Book
                 //UserId = model.UserId,
                 //BookId = model.BookId,
-                DateRegister = DateTime.Parse(model.DateOfRegister)
+              // DateRegister = DateTime.Parse(model.DateOfRegister)
 
                 //retornar
             };

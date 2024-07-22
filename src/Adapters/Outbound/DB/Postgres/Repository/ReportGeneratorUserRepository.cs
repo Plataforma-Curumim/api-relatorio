@@ -7,34 +7,39 @@ using System.Data;
 
 namespace api_relatorio.Adapters.Outbound.DB.Postgres.Repository
 {
-    public class RegisterUserRepository : IReportGeneratorUserRepository
+    public class ReportGeneratorUserRepository : IReportGeneratorUserRepository
     {
         private readonly IDBConnection _dbConnection;
         private readonly NpgsqlConnection _connection;
 
-        public RegisterUserRepository(IServiceProvider provider)
+        public ReportGeneratorUserRepository(IServiceProvider provider)
         {
             _dbConnection = provider.GetRequiredService<IDBConnection>();
             _connection = _dbConnection.GetConnection();
         }
-        public async Task<RegisterUserSql> RegisterUser(RegisterUserSql msgIn)
+        public async Task<ReportGeneratorUserSql> ReportGeneratorUser(ReportGeneratorUserSql msgIn)
         {
             using (NpgsqlTransaction transaction = _connection.BeginTransaction())
             {
                 NpgsqlCommand cmd = new NpgsqlCommand("sps_registerUser", _connection);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchName", msgIn.User!.Name!));
-                cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchCpfCnpj", msgIn.User!.CpfCnpj!));
-                cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchEmail", msgIn.User!.Email!));
-                cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchUsername", msgIn.User!.Username!));
-                cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchPassword", msgIn.User!.Password!));
-                cmd.Parameters.AddWithValue(new NpgsqlParameter("pdatDateOfBirth", msgIn.User!.DateOfBirth!));
-                cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchNumberPhone", msgIn.User!.NumberPhone!));
-                cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchAddress", msgIn.User!.Address!));
-                cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchIdRfid", msgIn.User!.IdRfid!));
-                cmd.Parameters.AddWithValue(new NpgsqlParameter("psmlStateUser", msgIn.User!.StateUser!));
-                cmd.Parameters.AddWithValue(new NpgsqlParameter("psmlTypeUser", msgIn.User!.TypeUser!));
+                //cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchName", msgIn.User!.Name!));
+                //cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchCpfCnpj", msgIn.User!.CpfCnpj!));
+                //cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchEmail", msgIn.User!.Email!));
+                //cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchUsername", msgIn.User!.Username!));
+                //cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchPassword", msgIn.User!.Password!));
+                //cmd.Parameters.AddWithValue(new NpgsqlParameter("pdatDateOfBirth", msgIn.User!.DateOfBirth!));
+                //cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchNumberPhone", msgIn.User!.NumberPhone!));
+                //cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchAddress", msgIn.User!.Address!));
+                //cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchIdRfid", msgIn.User!.IdRfid!));
+                //cmd.Parameters.AddWithValue(new NpgsqlParameter("psmlStateUser", msgIn.User!.StateUser!));
+                //cmd.Parameters.AddWithValue(new NpgsqlParameter("psmlTypeUser", msgIn.User!.TypeUser!));
+
+
+                //genero + idade
+                cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchGenero", msgIn.User!.Genero!));
+                cmd.Parameters.AddWithValue(new NpgsqlParameter("pvchIdade", msgIn.User!.Idade!));
 
                 NpgsqlParameter pvchUserId = new NpgsqlParameter("pvchUserId", NpgsqlDbType.Varchar, 1000, "", ParameterDirection.Output, false, new byte(), new byte(), new DataRowVersion(), msgIn.UserId!);
                 NpgsqlParameter pdatDateOfRegister = new NpgsqlParameter("pdatDateOfRegister", NpgsqlDbType.Date, 1000, "", ParameterDirection.Output, false, new byte(), new byte(), new DataRowVersion(), msgIn.DateOfRegister!);

@@ -6,7 +6,7 @@ namespace api_relatorio.Infra.DependencyInjection
     {
         public static void UseEndpointExtentions(this WebApplication app)
         {
-            app.AddReportGeneratorrUser();
+            app.AddReportGeneratorUser();
             app.AddReportGeneratorBook();
         }
     }

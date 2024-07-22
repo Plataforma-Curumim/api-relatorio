@@ -12,7 +12,7 @@ namespace api_relatorio.Adapters.Inbound.HTTP.DTO.Requests
 
 
         [Required(ErrorMessage = "As informações do livro são obrigatórias")]
-        public ReportGeneratorBook? ReportGeneratorBook { get; set; }
+        public Book? Book { get; set; }
 
         // fazer para selecionar so uma 
 

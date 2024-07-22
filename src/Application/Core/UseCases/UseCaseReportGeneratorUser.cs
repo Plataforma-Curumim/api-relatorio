@@ -16,12 +16,12 @@ namespace api_relatorio.Application.Core.UseCases
         {
             _repository = provider.GetService<IReportGeneratorUserRepository>();
         }
-        public async Task<BaseReturn<CommandRegisterUser>> Execute(CommandRegisterUser command)
+        public async Task<BaseReturn<CommandReportGeneratorUser>> Execute(CommandReportGeneratorUser command)
         {
             try
             {
                 var repositoryModel = MapUserRepository.ToRepository(command);
-                var responseRepository = await _repository!.RegisterUser(repositoryModel);
+                var responseRepository = await _repository!.ReportGeneratorUser(repositoryModel);
 
                 if (responseRepository.UserId == "")
                 {
@@ -31,17 +31,17 @@ namespace api_relatorio.Application.Core.UseCases
                         message = "Erro ao cadastrar usuario.",
                     };
 
-                    return new BaseReturn<CommandRegisterUser>().Error(EnumState.BUSINESS, error);
+                    return new BaseReturn<CommandReportGeneratorUser>().Error(EnumState.BUSINESS, error);
                 }
 
                 var response = MapUserRepository.ToCommand(responseRepository);
 
-                return new BaseReturn<CommandRegisterUser>().Success(response);
+                return new BaseReturn<CommandReportGeneratorUser>().Success(response);
 
             }catch (Exception ex)
             {
                 var error = new BaseError("500", ex.Message);
-                return new BaseReturn<CommandRegisterUser>().Error(EnumState.SYSTEM, error);
+                return new BaseReturn<CommandReportGeneratorUser>().Error(EnumState.SYSTEM, error);
             }
         }
     }

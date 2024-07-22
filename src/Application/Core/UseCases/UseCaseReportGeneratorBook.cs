@@ -15,12 +15,12 @@ namespace api_relatorio.Application.Core.UseCases
             _repository = provider.GetService<IReportGeneratorBookRepository>();
         }
 
-        public async Task<BaseReturn<CommandRegisterBook>> Execute(CommandRegisterBook command)
+        public async Task<BaseReturn<CommandReportGeneratorBook>> Execute(CommandReportGeneratorBook command)
         {
             try
             {
                 var repositoryModel = MapBookRepository.ToRepository(command);
-                var responseRepository = await _repository!.RegisterBook(repositoryModel);
+                var responseRepository = await _repository!.ReportGeneratorBook(repositoryModel);
 
                 if (responseRepository.BookId == "")
                 {
@@ -30,17 +30,17 @@ namespace api_relatorio.Application.Core.UseCases
                         message = "Erro ao cadastrar livro.",
                     };
 
-                    return new BaseReturn<CommandRegisterBook>().Error(EnumState.BUSINESS, error);
+                    return new BaseReturn<CommandReportGeneratorBook>().Error(EnumState.BUSINESS, error);
 
                 }
 
                 var response = MapBookRepository.ToCommand(responseRepository);
-                return new BaseReturn<CommandRegisterBook>().Success(response);
+                return new BaseReturn<CommandReportGeneratorBook>().Success(response);
 
             } catch (Exception ex)
             {
                 var error = new BaseError("500", ex.Message);
-                return new BaseReturn<CommandRegisterBook>().Error(EnumState.SYSTEM, error);
+                return new BaseReturn<CommandReportGeneratorBook>().Error(EnumState.SYSTEM, error);
 
             }
 

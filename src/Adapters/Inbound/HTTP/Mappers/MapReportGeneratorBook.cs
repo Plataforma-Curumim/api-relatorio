@@ -1,4 +1,5 @@
-﻿using api_relatorio.Adapters.Inbound.HTTP.DTO.Responses;
+﻿using api_relatorio.Adapters.Inbound.HTTP.DTO.Requests;
+using api_relatorio.Adapters.Inbound.HTTP.DTO.Responses;
 using api_relatorio.Application.Domain.DTO.Command;
 
 namespace api_relatorio.Adapters.Inbound.HTTP.Mappers
@@ -7,13 +8,13 @@ namespace api_relatorio.Adapters.Inbound.HTTP.Mappers
     public static class MapReportGeneratorBook
     {
       //  CommandRegisterBook =  CommandReportGeneratorBook
-        public static CommandReportGeneratorBook ToCommand(ReportGeneratorBookResponse request)
+        public static CommandReportGeneratorBook ToCommand(ReportGeneratorBookRequest request)
         {
             return new CommandReportGeneratorBook
             {
                 Book = request.Book,
                 //config = request.Config,
-                BookId = request.BookId
+                //BookId = request.BookId
 
                 //chama
             };
@@ -23,9 +24,10 @@ namespace api_relatorio.Adapters.Inbound.HTTP.Mappers
         {
             return new ReportGeneratorBookResponse
             {
-                BookId = response.BookId,
-                DateRegister = response.DateRegister,
+             //  BookId = response.BookId,
+              //  DateRegister = response.DateRegister,
                 Book = response.Book
+                // quantidade de livros
 
                 //volta
             };

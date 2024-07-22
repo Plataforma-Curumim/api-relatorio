@@ -2,7 +2,7 @@
 
 namespace api_relatorio.Application.Domain.DTO.Sql
 {
-    public record RegisterUserSql
+    public record ReportGeneratorUserSql
     {
         public User User { get; set; }
         public string UserId { get; set; }

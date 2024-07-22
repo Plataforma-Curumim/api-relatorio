@@ -10,8 +10,8 @@ namespace api_relatorio.Infra.DependencyInjection
         public static void AddRepositoryExtension(this IServiceCollection service)
         {
             service.AddSingleton<IDBConnection, PostgresConnection>();
-            service.AddScoped<IReportGeneratorUserRepository, RegisterUserRepository>();
-            service.AddScoped<IReportGeneratorBookRepository, RegisterBookRepository>();   
+            service.AddScoped<IReportGeneratorUserRepository, ReportGeneratorUserRepository>();
+            service.AddScoped<IReportGeneratorBookRepository, ReportGeneratorBookRepository>();   
         }
     }
 }
